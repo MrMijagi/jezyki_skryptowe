@@ -298,7 +298,7 @@ class Plotter(Frame):
         for i in range(13):
             Grid.rowconfigure(self, i, weight=1)
 
-        columns = ['', *list(self.controller.database.get_columns())]
+        columns = ['', 'oid', *list(self.controller.database.get_columns())]
 
         labels = ['Data:', 'Values:', 'Aggregate:', 'Where:', 'Group by:', 'Having:', 'Sort by:', '', 'Line color:', 'Marker:', 'Line style:']
         widgets_types = ['combobox', 'combobox', 'combobox', 'entry', 'combobox', 'entry', 'combobox', 'separator', 'combobox', 'combobox', 'combobox']
@@ -360,7 +360,7 @@ class Plotter(Frame):
 
         plt.plot(xs, ys, color=color_, marker=marker_, linestyle=line_style_)
         plt.xlabel(self.widgets[0].get())
-        plt.ylabel(self.widgets[1].get())
+        plt.ylabel(f'{self.widgets[2].get()}({self.widgets[1].get()})')
 
 
 if __name__ == "__main__":
