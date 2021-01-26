@@ -1,4 +1,0 @@
-pierwsza,druga
-ala,kajak
-ma,
-kota,lol
