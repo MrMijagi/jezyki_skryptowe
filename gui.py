@@ -359,6 +359,8 @@ class Plotter(Frame):
         line_style_ = self.widgets[9].get() if self.widgets[9].get() != '' else 'None'
 
         plt.plot(xs, ys, color=color_, marker=marker_, linestyle=line_style_)
+        plt.xlabel(self.widgets[0].get())
+        plt.ylabel(self.widgets[1].get())
 
 
 if __name__ == "__main__":
